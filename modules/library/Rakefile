@@ -1,0 +1,11 @@
+require 'puppetlabs_spec_helper/rake_tasks'
+
+desc "Validate classes and ruby files"
+task :validate do
+  Dir['classes/*.pp','spec/*/*.rb'].each do |ruby_file|
+    sh "ruby -c #{ruby_file}"
+  end
+  Dir['classes/*.pp','spec/*/*.rb'].each do |ruby_file|
+    sh "rubocop #{ruby_file}"
+  end
+end

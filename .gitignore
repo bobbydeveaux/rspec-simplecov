@@ -1,0 +1,6 @@
+.bundle
+vendor/
+coverage/
+spec/fixtures/manifests
+spec/fixtures/modules
+books.yml
